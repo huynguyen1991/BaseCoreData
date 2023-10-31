@@ -1,0 +1,6 @@
+framework module BaseCoreData {
+  umbrella header "BaseCoreData-umbrella.h"
+
+  export *
+  module * { export * }
+}

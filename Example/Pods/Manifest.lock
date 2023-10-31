@@ -1,0 +1,16 @@
+PODS:
+  - BaseCoreData (0.1.0)
+
+DEPENDENCIES:
+  - BaseCoreData (from `../`)
+
+EXTERNAL SOURCES:
+  BaseCoreData:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BaseCoreData: b6dd627a19358a81234151d0d7f71bea1fd77366
+
+PODFILE CHECKSUM: 914c3f29bd94607cd2084004b05be02a17d8a76e
+
+COCOAPODS: 1.13.0

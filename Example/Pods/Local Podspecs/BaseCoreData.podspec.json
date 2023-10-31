@@ -1,0 +1,22 @@
+{
+  "name": "BaseCoreData",
+  "version": "0.1.0",
+  "summary": "A short description of BaseCoreData.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/huynguyen1991/BaseCoreData",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "huynguyen1991": "huynh24@vpbank.com.vn"
+  },
+  "source": {
+    "git": "https://github.com/huynguyen1991/BaseCoreData.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "BaseCoreData/Classes/**/*"
+}
