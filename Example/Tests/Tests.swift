@@ -2,6 +2,7 @@ import XCTest
 import CoreData
 import BaseCoreData
 
+
 class Tests: XCTestCase {
     
     override func setUp() {
@@ -9,8 +10,10 @@ class Tests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         CoreDataStack.shares.sqliteName = "BaseCoreData"
         CoreDataStack.shares.entity.append(DefinitionEntity.createEntityDescription())
+    
     }
     
+   
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
@@ -39,10 +42,21 @@ final class DefinitionEntity: NSManagedObject {
     
 }
 
+class Book: NSObject {
+    let title: String = ""
+    let author: String? = ""
+    let numberOfPages: Int = 0
+}
+
 extension DefinitionEntity: DomainConvertibleType {
     typealias DomainType = DataDefinition
     
     static func createEntityDescription() -> NSEntityDescription {
+        if let types = getTypesOfProperties(ofObject: Book()) {
+            for (name, type) in types {
+                print("'\(name)' has type '\(type)'")
+            }
+        }
         
         return Table(name: String(describing: DefinitionEntity.self),
                      fields: [Field(name: "key", type: NSAttributeType.stringAttributeType),

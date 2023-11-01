@@ -3,4 +3,70 @@
    uuid = "BF762FAA-AFC7-4648-A34E-AF05F1C3548C"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA507BBE-E325-42A7-A4FD-FF597AD4BC6D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tests/Tests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "createEntityDescription()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A14165B-E998-41A4-A5F9-0482AC8A0DEC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tests/Tests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "createEntityDescription()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4A14165B-E998-41A4-A5F9-0482AC8A0DEC - a6e7580097cde10d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static BaseCoreData_Tests.DefinitionEntity.createEntityDescription() -&gt; __C.NSEntityDescription"
+                  moduleName = "BaseCoreData_Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huy/BaseCoreData/Example/Tests/Tests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "4A14165B-E998-41A4-A5F9-0482AC8A0DEC - a6e7580097cde10d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static BaseCoreData_Tests.DefinitionEntity.createEntityDescription() -&gt; __C.NSEntityDescription"
+                  moduleName = "BaseCoreData_Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huy/BaseCoreData/Example/Tests/Tests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

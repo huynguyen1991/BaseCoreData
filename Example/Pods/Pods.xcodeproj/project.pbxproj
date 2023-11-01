@@ -20,11 +20,11 @@
 		BFA3ACB2B7D04DCAEB9A459B2DA2B428 /* Pods-BaseCoreData_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC8BA6C4032C15B8AFA817F90DAA1652 /* Pods-BaseCoreData_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E54035E42AF118F0009E19AC /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54035E22AF118F0009E19AC /* NSManagedObjectContextExtension.swift */; };
 		E54035E52AF118F0009E19AC /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54035E32AF118F0009E19AC /* NSManagedObjectExtension.swift */; };
-		E54035E72AF11900009E19AC /* SwiftReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54035E62AF11900009E19AC /* SwiftReflection.swift */; };
 		E59C38612AEFB07F00B75F3E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59C385C2AEFB07E00B75F3E /* Repository.swift */; };
 		E59C38622AEFB07F00B75F3E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59C385D2AEFB07F00B75F3E /* CoreDataStack.swift */; };
 		E59C38632AEFB07F00B75F3E /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59C385E2AEFB07F00B75F3E /* DataBase.swift */; };
 		E59C38642AEFB07F00B75F3E /* DomainConvertibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59C385F2AEFB07F00B75F3E /* DomainConvertibleType.swift */; };
+		E5CEB6782AF24F64009CCBB8 /* SwiftReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CEB6772AF24F64009CCBB8 /* SwiftReflection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,11 +77,11 @@
 		E39222F2C6B1AEB836A190E640D8FA35 /* Pods-BaseCoreData_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BaseCoreData_Example.modulemap"; sourceTree = "<group>"; };
 		E54035E22AF118F0009E19AC /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSManagedObjectContextExtension.swift; path = BaseCoreData/Classes/NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
 		E54035E32AF118F0009E19AC /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSManagedObjectExtension.swift; path = BaseCoreData/Classes/NSManagedObjectExtension.swift; sourceTree = "<group>"; };
-		E54035E62AF11900009E19AC /* SwiftReflection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftReflection.swift; path = BaseCoreData/Classes/SwiftReflection.swift; sourceTree = "<group>"; };
 		E59C385C2AEFB07E00B75F3E /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repository.swift; path = BaseCoreData/Classes/Repository.swift; sourceTree = "<group>"; };
 		E59C385D2AEFB07F00B75F3E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = BaseCoreData/Classes/CoreDataStack.swift; sourceTree = "<group>"; };
 		E59C385E2AEFB07F00B75F3E /* DataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataBase.swift; path = BaseCoreData/Classes/DataBase.swift; sourceTree = "<group>"; };
 		E59C385F2AEFB07F00B75F3E /* DomainConvertibleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DomainConvertibleType.swift; path = BaseCoreData/Classes/DomainConvertibleType.swift; sourceTree = "<group>"; };
+		E5CEB6772AF24F64009CCBB8 /* SwiftReflection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftReflection.swift; path = BaseCoreData/Classes/SwiftReflection.swift; sourceTree = "<group>"; };
 		E9DEF7141F33B51BDBCB7B42A788B687 /* BaseCoreData.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BaseCoreData.modulemap; sourceTree = "<group>"; };
 		EDC2A0185409EC4870C940A874E05155 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F26F2063C8D900E440B0E2D9A6B6CFDD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 				0098C3B42AF16C42003975B7 /* Helper.swift */,
 				E54035E22AF118F0009E19AC /* NSManagedObjectContextExtension.swift */,
 				E54035E32AF118F0009E19AC /* NSManagedObjectExtension.swift */,
-				E54035E62AF11900009E19AC /* SwiftReflection.swift */,
+				E5CEB6772AF24F64009CCBB8 /* SwiftReflection.swift */,
 				4AAC18EC12C35E2EE39A3771196C9AF0 /* Pod */,
 				6128857C724A4A40FE3E8BDA4B508889 /* Support Files */,
 			);
@@ -341,6 +341,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					4A1B4FE3D2C042C0CE8A4289B0A5D9D0 = {
+						LastSwiftMigration = "";
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -405,8 +410,8 @@
 				E59C38622AEFB07F00B75F3E /* CoreDataStack.swift in Sources */,
 				E54035E52AF118F0009E19AC /* NSManagedObjectExtension.swift in Sources */,
 				E59C38612AEFB07F00B75F3E /* Repository.swift in Sources */,
+				E5CEB6782AF24F64009CCBB8 /* SwiftReflection.swift in Sources */,
 				E59C38642AEFB07F00B75F3E /* DomainConvertibleType.swift in Sources */,
-				E54035E72AF11900009E19AC /* SwiftReflection.swift in Sources */,
 				E54035E42AF118F0009E19AC /* NSManagedObjectContextExtension.swift in Sources */,
 				0098C3B72AF16C54003975B7 /* CoreDataError.swift in Sources */,
 			);
