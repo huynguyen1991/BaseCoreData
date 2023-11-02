@@ -38,25 +38,17 @@ final class DefinitionEntity: NSManagedObject {
     @NSManaged var key: String
     @NSManaged var type: String
     @NSManaged var updateDate: String
-    @NSManaged var updateDate2: Double
-    
-}
-
-class Book: NSObject {
-    let title: String = ""
-    let author: String? = ""
-    let numberOfPages: Int = 0
+    @NSManaged var updateDate2: Int
+    @NSManaged var updateDate3: Int32
+    @NSManaged var updateDate4: Data
+    @NSManaged var updateDate5: Date
 }
 
 extension DefinitionEntity: DomainConvertibleType {
     typealias DomainType = DataDefinition
     
     static func createEntityDescription() -> NSEntityDescription {
-        if let types = getTypesOfProperties(ofObject: Book()) {
-            for (name, type) in types {
-                print("'\(name)' has type '\(type)'")
-            }
-        }
+        Helper.createEntity(in: Self.self)
         
         return Table(name: String(describing: DefinitionEntity.self),
                      fields: [Field(name: "key", type: NSAttributeType.stringAttributeType),

@@ -47,33 +47,6 @@ public func getTypesOfProperties(in clazz: NSObject.Type, types: Dictionary<Stri
     }
 }
 
-public func getTypesOfProperties(ofObject object: NSObject) -> Dictionary<String, Any>? {
-    let clazz: NSObject.Type = type(of: object)
-    return getTypesOfProperties(in: clazz)
-}
-
-public func typeOf(property propertyName: String, for object: NSObject) -> Any? {
-    let type = type(of: object)
-    return typeOf(property: propertyName, in: type)
-}
-
-public func typeOf(property propertyName: String, in clazz: NSObject.Type) -> Any? {
-    guard let propertyTypes = getTypesOfProperties(in: clazz), let type = propertyTypes[propertyName] else { return nil }
-    print("Property named: '\(propertyName)' has type: \(type)")
-    return type
-}
-
-public func isProperty(named propertyName: String, ofType targetType: Any, for object: NSObject) -> Bool {
-    let type = type(of: object)
-    return isProperty(named: propertyName, ofType: targetType, in: type)
-}
-
-public func isProperty(named propertyName: String, ofType targetType: Any, in clazz: NSObject.Type) -> Bool {
-    let propertyType = typeOf(property: propertyName, in: clazz)
-    let match = propertyType == targetType
-    return match 
-}
-
 fileprivate func ==(rhs: Any, lhs: Any) -> Bool {
     let rhsType: String = "\(rhs)".withoutOptional
     let lhsType: String = "\(lhs)".withoutOptional
@@ -144,10 +117,10 @@ fileprivate let valueTypesMap: Dictionary<String, Any> = [
     "c" : Int8.self,
     "s" : Int16.self,
     "i" : Int32.self,
-    "q" : Int.self, //also: Int64, NSInteger, only true on 64 bit platforms
+    "q" : Int.self,
     "S" : UInt16.self,
     "I" : UInt32.self,
-    "Q" : UInt.self, //also UInt64, only true on 64 bit platforms
+    "Q" : UInt.self,
     "B" : Bool.self,
     "d" : Double.self,
     "f" : Float.self,
