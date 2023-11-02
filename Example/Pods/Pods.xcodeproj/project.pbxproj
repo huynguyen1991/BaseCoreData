@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0098C3B52AF16C42003975B7 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0098C3B42AF16C42003975B7 /* Helper.swift */; };
 		0098C3B72AF16C54003975B7 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0098C3B62AF16C54003975B7 /* CoreDataError.swift */; };
+		00A6B5D52AF40A3300C6AA6E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A6B5D42AF40A3300C6AA6E /* Configuration.swift */; };
 		03EB59798B4CCDFD67723589698A7847 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		045C7F0F897CAAC3FDB443BD9A72BB05 /* BaseCoreData-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3DC2B4753BBF39579064E31BD93ACF3 /* BaseCoreData-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08E61B59A25CD95EC64CDC102AF68130 /* Pods-BaseCoreData_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6943FADC8F45E1FE05E0EFBB529F3 /* Pods-BaseCoreData_Tests-dummy.m */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		0098C3B42AF16C42003975B7 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = BaseCoreData/Classes/Helper.swift; sourceTree = "<group>"; };
 		0098C3B62AF16C54003975B7 /* CoreDataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataError.swift; path = BaseCoreData/Classes/CoreDataError.swift; sourceTree = "<group>"; };
+		00A6B5D42AF40A3300C6AA6E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = BaseCoreData/Classes/Configuration.swift; sourceTree = "<group>"; };
 		01E7C5736D594AC6A3448515C32F2CEC /* BaseCoreData-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BaseCoreData-Info.plist"; sourceTree = "<group>"; };
 		0A80ACCC383F07139B6E9DB3DAD3E18E /* Pods-BaseCoreData_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BaseCoreData_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		104BBB88A40F3BF21C725930DE9D06CA /* Pods-BaseCoreData_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BaseCoreData_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				E54035E22AF118F0009E19AC /* NSManagedObjectContextExtension.swift */,
 				E54035E32AF118F0009E19AC /* NSManagedObjectExtension.swift */,
 				E5CEB6772AF24F64009CCBB8 /* SwiftReflection.swift */,
+				00A6B5D42AF40A3300C6AA6E /* Configuration.swift */,
 				4AAC18EC12C35E2EE39A3771196C9AF0 /* Pod */,
 				6128857C724A4A40FE3E8BDA4B508889 /* Support Files */,
 			);
@@ -414,6 +417,7 @@
 				E59C38642AEFB07F00B75F3E /* DomainConvertibleType.swift in Sources */,
 				E54035E42AF118F0009E19AC /* NSManagedObjectContextExtension.swift in Sources */,
 				0098C3B72AF16C54003975B7 /* CoreDataError.swift in Sources */,
+				00A6B5D52AF40A3300C6AA6E /* Configuration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

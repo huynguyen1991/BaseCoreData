@@ -48,6 +48,9 @@ public func getTypesOfProperties(in clazz: NSObject.Type, types: Dictionary<Stri
 }
 
 fileprivate func ==(rhs: Any, lhs: Any) -> Bool {
+    
+    print("fileprivate func")
+    
     let rhsType: String = "\(rhs)".withoutOptional
     let lhsType: String = "\(lhs)".withoutOptional
     let same = rhsType == lhsType
@@ -55,6 +58,7 @@ fileprivate func ==(rhs: Any, lhs: Any) -> Bool {
 }
 
 fileprivate func ==(rhs: NSObject.Type, lhs: Any) -> Bool {
+    print("fileprivate func 2")
     let rhsType: String = "\(rhs)".withoutOptional
     let lhsType: String = "\(lhs)".withoutOptional
     let same = rhsType == lhsType
@@ -62,6 +66,7 @@ fileprivate func ==(rhs: NSObject.Type, lhs: Any) -> Bool {
 }
 
 fileprivate func ==(rhs: Any, lhs: NSObject.Type) -> Bool {
+    print("fileprivate func 3")
     let rhsType: String = "\(rhs)".withoutOptional
     let lhsType: String = "\(lhs)".withoutOptional
     let same = rhsType == lhsType

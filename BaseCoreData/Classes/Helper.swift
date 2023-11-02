@@ -32,16 +32,21 @@ public struct Helper {
     public static func createEntity(in clazz: NSObject.Type) {
         if let types = getTypesOfProperties(in: clazz) {
             
-            
             for (name, type) in types {
-                print("'\(name)' has type '\(type)'")
-            }
+        
+                        if type is Bool {
+                            print("found NSDate")
+                        }
+                    }
+                }
+//            for (name, type) in types {
+//                print("'\(name)' has type '\(type)'")
+//            }
         }
     }
-}
 
-Table(name: String(describing: DefinitionEntity.self),
-             fields: [Field(name: "key", type: NSAttributeType.stringAttributeType),
-                      Field(name: "type", type: NSAttributeType.stringAttributeType),
-                      Field(name: "updateDate", type: NSAttributeType.stringAttributeType)
-                     ]).entity()
+//Table(name: String(describing: DefinitionEntity.self),
+//             fields: [Field(name: "key", type: NSAttributeType.stringAttributeType),
+//                      Field(name: "type", type: NSAttributeType.stringAttributeType),
+//                      Field(name: "updateDate", type: NSAttributeType.stringAttributeType)
+//                     ]).entity()
