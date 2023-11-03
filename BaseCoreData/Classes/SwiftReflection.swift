@@ -12,10 +12,10 @@ import ObjectiveC.runtime
 
 /*
  Please note that the class you are inspecting have to inherit from NSObject.
-
+ 
  This tool can find the name and type of properties of type NSObject, e.g. NSString (or just "String" with Swift 3 syntax), NSDate (or just "NSDate" with Swift 3 syntax), NSNumber etc.
  It also works with optionals and implicit optionals for said types, e.g. String?, String!, Date!, Date? etc...
-
+ 
  This tool can also find name and type of "value type" such as Bool, Int, Int32, _HOWEVER_ it does not work if said value type is an optional, e.g. Int? <--- DOES NOT WORK
  */
 
@@ -27,12 +27,12 @@ public func getTypesOfProperties(in clazz: NSObject.Type, includeSuperclass: Boo
 
 public func getTypesOfProperties(in clazz: NSObject.Type, types: Dictionary<String, Any>, includeSuperclass: Bool, excludeReadOnlyProperties: Bool = false) -> Dictionary<String, Any>? {
     var count = UInt32()
-    guard let properties = class_copyPropertyList(clazz, &count) else { return nil }
+    guard let properties = class_copyPropertyList(clazz, &count) else { return .none }
     var types = types
     for i in 0..<Int(count) {
         let property: objc_property_t = properties[i]
         guard let name = getNameOf(property: property)
-            else { continue }
+        else { continue }
         let isReadOnlyProperty = isReadOnly(property: property)
         if excludeReadOnlyProperties && isReadOnlyProperty { continue }
         let type = getTypeOf(property: property)
@@ -45,32 +45,6 @@ public func getTypesOfProperties(in clazz: NSObject.Type, types: Dictionary<Stri
     } else {
         return types
     }
-}
-
-fileprivate func ==(rhs: Any, lhs: Any) -> Bool {
-    
-    print("fileprivate func")
-    
-    let rhsType: String = "\(rhs)".withoutOptional
-    let lhsType: String = "\(lhs)".withoutOptional
-    let same = rhsType == lhsType
-    return same
-}
-
-fileprivate func ==(rhs: NSObject.Type, lhs: Any) -> Bool {
-    print("fileprivate func 2")
-    let rhsType: String = "\(rhs)".withoutOptional
-    let lhsType: String = "\(lhs)".withoutOptional
-    let same = rhsType == lhsType
-    return same
-}
-
-fileprivate func ==(rhs: Any, lhs: NSObject.Type) -> Bool {
-    print("fileprivate func 3")
-    let rhsType: String = "\(rhs)".withoutOptional
-    let lhsType: String = "\(lhs)".withoutOptional
-    let same = rhsType == lhsType
-    return same
 }
 
 struct Unknown {}
@@ -114,7 +88,7 @@ fileprivate func valueType(withAttributes attributes: String) -> Any {
 fileprivate func getNameOf(property: objc_property_t) -> String? {
     guard
         let name: NSString = NSString(utf8String: property_getName(property))
-    else { return nil }
+    else { return .none }
     return name as String
 }
 
@@ -138,14 +112,6 @@ private extension String {
         return String(substring)
     }
 
-    /// Extracts "NSDate" from the string "Optional(NSDate)"
-    var withoutOptional: String {
-        guard self.contains("Optional(") && self.contains(")") else { return self }
-        let afterOpeningParenthesis = self.components(separatedBy: "(")[1]
-        let wihtoutOptional = afterOpeningParenthesis.components(separatedBy: ")")[0]
-        return wihtoutOptional
-    }
-    
     func chopPrefix(_ count: Int = 1) -> String {
         let index = index(startIndex, offsetBy: count)
         return String(prefix(upTo: index))

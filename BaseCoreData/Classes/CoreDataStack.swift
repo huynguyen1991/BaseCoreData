@@ -13,7 +13,12 @@ public final class CoreDataStack {
     public static let shares = CoreDataStack()
     
     public var entity: [NSEntityDescription] = []
-    public var sqliteName: String?
+    
+    var sqliteName: String?
+    
+    func setStoreName(_ name: String) {
+        sqliteName = name + ".sqlite"
+    }
     
     lazy var applicationDocumentsDirectory: URL? = {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
@@ -26,8 +31,9 @@ public final class CoreDataStack {
     }()
 
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+        guard let sqliteName = sqliteName else { assert(false, "storeName is empty") }
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-        if let url = applicationDocumentsDirectory?.appendingPathComponent("CoreDataStack.sqlite") {
+        if let url = applicationDocumentsDirectory?.appendingPathComponent(sqliteName) {
             do {
                 let options = [NSMigratePersistentStoresAutomaticallyOption: true,
                                      NSInferMappingModelAutomaticallyOption: true]
@@ -44,4 +50,24 @@ public final class CoreDataStack {
         context.persistentStoreCoordinator = persistentStoreCoordinator
         return context
     }()
+}
+
+extension NSManagedObjectContext {
+    func saveContext () throws {
+        if self.persistentStoreCoordinator?.persistentStores == .none {
+            throw CoreDataError(message: "Error persistent Stores")
+        } else {
+            if self.hasChanges {
+                try self.save()
+            }
+        }
+    }
+}
+
+struct CoreDataError: Error {
+    var message: String
+    
+    var localizedDescription: String {
+        return message
+    }
 }

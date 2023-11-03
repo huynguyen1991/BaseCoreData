@@ -9,14 +9,14 @@
     "file": "LICENSE"
   },
   "authors": {
-    "huynguyen1991": "huynh24@vpbank.com.vn"
+    "huynguyen1991": "huuhuy.nguyen1991@gmail.com"
   },
   "source": {
     "git": "https://github.com/huynguyen1991/BaseCoreData.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "11.0"
   },
   "source_files": "BaseCoreData/Classes/**/*"
 }
