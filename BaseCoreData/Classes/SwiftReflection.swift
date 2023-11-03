@@ -19,13 +19,12 @@ import ObjectiveC.runtime
  This tool can also find name and type of "value type" such as Bool, Int, Int32, _HOWEVER_ it does not work if said value type is an optional, e.g. Int? <--- DOES NOT WORK
  */
 
-
-public func getTypesOfProperties(in clazz: NSObject.Type, includeSuperclass: Bool = false, excludeReadOnlyProperties: Bool = false) -> Dictionary<String, Any>? {
+public func getTypesOfProperties(in clazz: AnyClass, includeSuperclass: Bool = false, excludeReadOnlyProperties: Bool = false) -> Dictionary<String, Any>? {
     let types: Dictionary<String, Any> = [:]
     return getTypesOfProperties(in: clazz, types: types, includeSuperclass: includeSuperclass)
 }
 
-public func getTypesOfProperties(in clazz: NSObject.Type, types: Dictionary<String, Any>, includeSuperclass: Bool, excludeReadOnlyProperties: Bool = false) -> Dictionary<String, Any>? {
+public func getTypesOfProperties(in clazz: AnyClass, types: Dictionary<String, Any>, includeSuperclass: Bool, excludeReadOnlyProperties: Bool = false) -> Dictionary<String, Any>? {
     var count = UInt32()
     guard let properties = class_copyPropertyList(clazz, &count) else { return .none }
     var types = types
@@ -111,7 +110,7 @@ private extension String {
         let substring = self[self.index(self.startIndex, offsetBy: fromIndex)..<self.index(self.startIndex, offsetBy: toIndex)]
         return String(substring)
     }
-
+    
     func chopPrefix(_ count: Int = 1) -> String {
         let index = index(startIndex, offsetBy: count)
         return String(prefix(upTo: index))

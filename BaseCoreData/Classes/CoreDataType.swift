@@ -10,15 +10,11 @@ import CoreData
 
 public struct CoreDataType {
     public static func convert(_ propertyType: Any) -> NSAttributeType {
-        if propertyType == Int16.self ||
-            propertyType == UInt16.self {
+        if propertyType == Int16.self {
             return NSAttributeType.integer16AttributeType
-        } else if propertyType == Int32.self ||
-                    propertyType == UInt32.self {
+        } else if propertyType == Int32.self {
             return NSAttributeType.integer32AttributeType
-        } else if propertyType == Int64.self ||
-                    propertyType == Int.self ||
-                    propertyType == UInt.self {
+        } else if propertyType == Int.self {
             return NSAttributeType.integer64AttributeType
         } else if propertyType == Decimal.self {
             return NSAttributeType.decimalAttributeType
@@ -43,20 +39,6 @@ public struct CoreDataType {
 }
 
 fileprivate func ==(rhs: Any, lhs: Any) -> Bool {
-    let rhsType: String = "\(rhs)".withoutOptional
-    let lhsType: String = "\(lhs)".withoutOptional
-    let same = rhsType == lhsType
-    return same
-}
-
-fileprivate func ==(rhs: NSObject.Type, lhs: Any) -> Bool {
-    let rhsType: String = "\(rhs)".withoutOptional
-    let lhsType: String = "\(lhs)".withoutOptional
-    let same = rhsType == lhsType
-    return same
-}
-
-fileprivate func ==(rhs: Any, lhs: NSObject.Type) -> Bool {
     let rhsType: String = "\(rhs)".withoutOptional
     let lhsType: String = "\(lhs)".withoutOptional
     let same = rhsType == lhsType
