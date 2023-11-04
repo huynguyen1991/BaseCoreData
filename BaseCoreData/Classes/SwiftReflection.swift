@@ -13,10 +13,32 @@ import ObjectiveC.runtime
 /*
  Please note that the class you are inspecting have to inherit from NSObject.
  
- This tool can find the name and type of properties of type NSObject, e.g. NSString (or just "String" with Swift 3 syntax), NSDate (or just "NSDate" with Swift 3 syntax), NSNumber etc.
+ This tool can find the name and type of properties of type NSObject, e.g. NSString (or just "String"), NSDate (or just "NSDate"), NSNumber etc.
  It also works with optionals and implicit optionals for said types, e.g. String?, String!, Date!, Date? etc...
  
- This tool can also find name and type of "value type" such as Bool, Int, Int32, _HOWEVER_ it does not work if said value type is an optional, e.g. Int? <--- DOES NOT WORK
+ This tool can also find name and type of "value type" such as Bool, Int, Int32, _HOWEVER_ it does not work if said value type is an optional, e.g. Int?, Int! <--- DOES NOT WORK
+ 
+ @objcMembers
+ class Book: NSObject {
+     var name: String
+     var gender: Bool <--- DOES NOT WORK Bool?
+     init(name: String, gender: Bool) {
+         self.name = name
+         self.gender = gender
+     }
+ }
+ 
+ or
+ 
+ @objc(Book)
+ class Book: NSObject {
+ @objc var name: String
+ @objc var gender: Bool <--- DOES NOT WORK Bool?
+     init(name: String, gender: Bool) {
+         self.name = name
+         self.gender = gender
+     }
+ }
  */
 
 public func getTypesOfProperties(in clazz: AnyClass, includeSuperclass: Bool = false, excludeReadOnlyProperties: Bool = false) -> Dictionary<String, Any>? {

@@ -26,12 +26,6 @@ class SwiftReflectionTests: XCTestCase {
         }
     }
     
-    func testFor() {
-        for item in 1..<1000000 {
-            print(item)
-        }
-    }
-    
     func testGetTypesOfProperties() {
         guard let types = getTypesOfProperties(in: DefinitionEntity.self) else {
             assert(false, "Should be able to get types")
