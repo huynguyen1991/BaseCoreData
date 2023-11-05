@@ -22,15 +22,15 @@ public struct CoreDataType {
             return NSAttributeType.doubleAttributeType
         } else if propertyType == Float.self {
             return NSAttributeType.floatAttributeType
-        } else if propertyType == String.self {
+        } else if propertyType == NSString.self {
             return NSAttributeType.stringAttributeType
         } else if propertyType == Bool.self {
             return NSAttributeType.booleanAttributeType
-        } else if propertyType == Date.self {
+        } else if propertyType == NSDate.self {
             return NSAttributeType.dateAttributeType
-        } else if propertyType == Data.self {
+        } else if propertyType == NSData.self {
             return NSAttributeType.binaryDataAttributeType
-        } else if propertyType == UUID.self {
+        } else if propertyType == NSUUID.self {
             return NSAttributeType.UUIDAttributeType
         } else {
             assert(false, "Property Type is not suport")
