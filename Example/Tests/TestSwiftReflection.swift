@@ -2,7 +2,7 @@ import XCTest
 import CoreData
 import BaseCoreData
 
-class Tests: XCTestCase {
+class SwiftReflection: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -18,53 +18,61 @@ class Tests: XCTestCase {
         }
     }
     
-    func testGetTypesOfProperties() {
+    func testPropertyCount() {
         guard let types = getTypesOfProperties(in: DefinitionEntity.self) else {
             assert(false, "Should be able to get types")
         }
         
-        assert(types.count == 12, "Book should have 12 properties")
-        
-        for (propertyName, propertyType) in types {
-            
-            print("propertyName \(propertyName) -- propertyType \(propertyType)")
-            switch propertyName {
-            case "int16":
-                assert(propertyType == Int16.self, "'int16' should be of type 'Int16'")
-            case "int32":
-                assert(propertyType == Int32.self, "'int32' should be of type 'Int32'")
-            case "int64":
-                assert(propertyType == Int.self, "'int64' should be of type 'Int'")
-            case "int":
-                assert(propertyType == Int.self, "'int' should be of type 'Int'")
-            case "decimal":
-                assert(propertyType == Decimal.self, "'decimal' should be of type 'Decimal'")
-            case "double":
-                assert(propertyType == Double.self, "'double' should be of type 'Double'")
-            case "float":
-                assert(propertyType == Float.self, "'float' should be of type 'Float'")
-            case "bool":
-                assert(propertyType == Bool.self, "'bool' should be of type 'Bool'")
-            case "string":
-                assert(propertyType == NSString.self, "'string' should be of type 'NSString'")
-            case "date":
-                assert(propertyType == NSDate.self, "'date' should be of type 'NSDate'")
-            case "data":
-                assert(propertyType == NSData.self, "'data' should be of type 'NSData'")
-            case "uUID":
-                assert(propertyType == NSUUID.self, "'uUID' should be of type 'NSUUID'")
-            default:
-                assert(false, "should not contain any property with any other name")
-            }
-        }
+        assert(types.count == 12, "Expected 12 properties, but got \(types.count)")
     }
+    
+    func testPropertyNames() {
+        guard let types = getTypesOfProperties(in: DefinitionEntity.self) else {
+            assert(false, "Should be able to get types")
+        }
+        
+        let propertyNames =  Array(types.keys)
+        
+        XCTAssertTrue(propertyNames.contains("int16")   , "int16 is missing")
+        XCTAssertTrue(propertyNames.contains("int32")   , "int32 is missing")
+        XCTAssertTrue(propertyNames.contains("int64")   , "int64 is missing")
+        XCTAssertTrue(propertyNames.contains("int")     , "int is missing")
+        XCTAssertTrue(propertyNames.contains("decimal") , "decimal is missing")
+        XCTAssertTrue(propertyNames.contains("double")  , "double is missing")
+        XCTAssertTrue(propertyNames.contains("float")   , "float is missing")
+        XCTAssertTrue(propertyNames.contains("bool")    , "bool is missing")
+        XCTAssertTrue(propertyNames.contains("string")  , "string is missing")
+        XCTAssertTrue(propertyNames.contains("date")    , "date is missing")
+        XCTAssertTrue(propertyNames.contains("data")    , "data is missing")
+        XCTAssertTrue(propertyNames.contains("uUID")    , "uUID is missing")
+    }
+    
+    func testPropertyType() {
+        guard let types = getTypesOfProperties(in: DefinitionEntity.self) else {
+            assert(false, "Should be able to get types")
+        }
+        
+        XCTAssertTrue(types["int16"]! == Int16.self, "int16 is missing")
+        XCTAssertTrue(types["int32"]! == Int32.self, "int32 is missing")
+        XCTAssertTrue(types["int64"]! == Int.self, "int64 is missing")
+        XCTAssertTrue(types["int"]! == Int.self, "int is missing")
+        XCTAssertTrue(types["decimal"]! == Decimal.self, "decimal is missing")
+        XCTAssertTrue(types["double"]! == Double.self, "double is missing")
+        XCTAssertTrue(types["float"]! == Float.self, "float is missing")
+        XCTAssertTrue(types["bool"]! == Bool.self, "bool is missing")
+        XCTAssertTrue(types["string"]! == NSString.self, "string is missing")
+        XCTAssertTrue(types["date"]! == NSDate.self, "date is missing")
+        XCTAssertTrue(types["data"]! == NSData.self, "data is missing")
+        XCTAssertTrue(types["uUID"]! == NSUUID.self, "uUID is missing")
+    }
+    
     
     func testCoreDataTypeConvet() {
         guard let types = getTypesOfProperties(in: DefinitionEntity.self) else {
             assert(false, "Should be able to get types")
         }
         
-        assert(types.count == 12, "Book should have 12 properties")
+        assert(types.count == 12, "DefinitionEntity should have 12 properties")
         
         for (propertyName, propertyType) in types {
             print("propertyName \(propertyName) -- propertyType \(propertyType)")
