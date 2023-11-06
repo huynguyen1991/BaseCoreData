@@ -7,7 +7,7 @@
 		<key>BaseCoreData.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>Pods-BaseCoreData_Example.xcscheme</key>
 		<dict>

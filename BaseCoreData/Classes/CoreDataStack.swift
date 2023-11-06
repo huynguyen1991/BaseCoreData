@@ -14,7 +14,7 @@ public final class CoreDataStack {
     
     public var entity: [NSEntityDescription] = []
     
-    var sqliteName: String?
+    private var sqliteName: String?
     
     func setStoreName(_ name: String) {
         sqliteName = name + ".sqlite"

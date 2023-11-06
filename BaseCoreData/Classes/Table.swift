@@ -8,9 +8,9 @@
 import Foundation
 import CoreData
 
-struct Table {
-    let name: String
-    let fields: [Field]
+public struct Table {
+    public let name: String
+    public let fields: [Field]
     
     public init(name: String, fields: [Field]) {
         self.name = name
@@ -18,9 +18,9 @@ struct Table {
     }
 }
 
-struct Field {
-    let name: String
-    let type: NSAttributeType
+public struct Field {
+    public let name: String
+    public let type: NSAttributeType
     
     public init(name: String, type: NSAttributeType) {
         self.name = name

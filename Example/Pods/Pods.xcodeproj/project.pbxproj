@@ -19,7 +19,7 @@
 		71C21295FB091AC074BAA650BD51BC30 /* Pods-BaseCoreData_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EC71A1E0902F0D918F35BC6CC592841 /* Pods-BaseCoreData_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7CEDA3242300761AFA2F74E5F9C72DD /* CoreDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDA3E96A55DA2A91AEF2EF481BFB117 /* CoreDataType.swift */; };
 		B4AF82A7CC40A008F17FBAEE07AF7719 /* DomainConvertibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D41CB1DF27B1F0CFDBF0330A6EF11 /* DomainConvertibleType.swift */; };
-		B770C369BDE60751EB73CD3D9AE91C74 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402BCA8A773EBF9F7C5AA0E0477F7C6D /* DataBase.swift */; };
+		B770C369BDE60751EB73CD3D9AE91C74 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402BCA8A773EBF9F7C5AA0E0477F7C6D /* Table.swift */; };
 		BE45FE0ACA4CE498ECC0B53C871F08E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		BFA3ACB2B7D04DCAEB9A459B2DA2B428 /* Pods-BaseCoreData_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC8BA6C4032C15B8AFA817F90DAA1652 /* Pods-BaseCoreData_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -50,7 +50,7 @@
 		2D59676F49F3BE4A31483661C071DA4D /* Pods-BaseCoreData_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BaseCoreData_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		2DA892DBDACF3EFF98D6D10098236E3A /* SwiftReflection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftReflection.swift; path = BaseCoreData/Classes/SwiftReflection.swift; sourceTree = "<group>"; };
 		3403A102057F7D37C05D24426D29B93F /* BaseCoreData-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BaseCoreData-dummy.m"; sourceTree = "<group>"; };
-		402BCA8A773EBF9F7C5AA0E0477F7C6D /* DataBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataBase.swift; path = BaseCoreData/Classes/DataBase.swift; sourceTree = "<group>"; };
+		402BCA8A773EBF9F7C5AA0E0477F7C6D /* Table.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Table.swift; path = BaseCoreData/Classes/Table.swift; sourceTree = "<group>"; };
 		44219B07856E257C8A34A09981BBC374 /* BaseCoreData-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BaseCoreData-umbrella.h"; sourceTree = "<group>"; };
 		4D13762E34985EF5F1E1B5E470ADF834 /* Pods-BaseCoreData_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-BaseCoreData_Tests"; path = Pods_BaseCoreData_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1AE1A49FDAF717D97E8C1FEFFDD3C4 /* Pods-BaseCoreData_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BaseCoreData_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -132,9 +132,9 @@
 			children = (
 				2DA892DBDACF3EFF98D6D10098236E3A /* SwiftReflection.swift */,
 				6FDA3E96A55DA2A91AEF2EF481BFB117 /* CoreDataType.swift */,
-				BF11F5950046EA9A07CC9445C3ACF767 /* Repository.swift */,
+				402BCA8A773EBF9F7C5AA0E0477F7C6D /* Table.swift */,
 				CDD8209FEFEB6CC58186D5CA18EF5D83 /* CoreDataStack.swift */,
-				402BCA8A773EBF9F7C5AA0E0477F7C6D /* DataBase.swift */,
+				BF11F5950046EA9A07CC9445C3ACF767 /* Repository.swift */,
 				DC1D41CB1DF27B1F0CFDBF0330A6EF11 /* DomainConvertibleType.swift */,
 				F2EBD6F3E523B3872566891162397E80 /* Pod */,
 				1EB59C0EE7E6DCAB7719164720C1A81F /* Support Files */,
@@ -393,7 +393,7 @@
 				48EE3C08CA12B65980AAAC91B85CF795 /* BaseCoreData-dummy.m in Sources */,
 				40DC2423D3FBC14B3E4C1614B9ED252D /* CoreDataStack.swift in Sources */,
 				A7CEDA3242300761AFA2F74E5F9C72DD /* CoreDataType.swift in Sources */,
-				B770C369BDE60751EB73CD3D9AE91C74 /* DataBase.swift in Sources */,
+				B770C369BDE60751EB73CD3D9AE91C74 /* Table.swift in Sources */,
 				B4AF82A7CC40A008F17FBAEE07AF7719 /* DomainConvertibleType.swift in Sources */,
 				20174761530C379E930AD6CA9BCF6DF5 /* Repository.swift in Sources */,
 				4E554639B954F0CBD99BEA8FC10A02FC /* SwiftReflection.swift in Sources */,
