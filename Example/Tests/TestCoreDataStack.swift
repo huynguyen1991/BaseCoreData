@@ -8,11 +8,14 @@
 
 import Foundation
 import XCTest
+import BaseCoreData
 
 class TestCoreDataStack: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        CoreDataStack.shares.config = CoreDataStackConfig(sqliteName: "CoreDataStack",
+                                                          entity: [DefinitionEntity.createEntityDescription()])
     }
     
     override func tearDown() {
@@ -21,7 +24,7 @@ class TestCoreDataStack: XCTestCase {
     
     func testPerformanceExample() {
         self.measure() {
-            
+           
         }
     }
 }

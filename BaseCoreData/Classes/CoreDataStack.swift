@@ -8,32 +8,37 @@
 import Foundation
 import CoreData
 
+public struct CoreDataStackConfig {
+    public var sqliteName: String
+    public var entity: [NSEntityDescription]
+    
+    public init(sqliteName: String, entity: [NSEntityDescription]) {
+        self.sqliteName = sqliteName
+        self.entity = entity
+    }
+}
+
 public final class CoreDataStack {
     
     public static let shares = CoreDataStack()
     
-    public var entity: [NSEntityDescription] = []
+    public var config: CoreDataStackConfig?
     
-    private var sqliteName: String?
-    
-    func setStoreName(_ name: String) {
-        sqliteName = name + ".sqlite"
-    }
-    
-    lazy var applicationDocumentsDirectory: URL? = {
+    private lazy var applicationDocumentsDirectory: URL? = {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     }()
     
-    lazy var managedObjectModel: NSManagedObjectModel = {
+    private lazy var managedObjectModel: NSManagedObjectModel = {
+        guard let entity = config?.entity else { assert(false, "Entity is empty") }
         let model = NSManagedObjectModel()
         model.entities = entity
         return model
     }()
 
-    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        guard let sqliteName = sqliteName else { assert(false, "storeName is empty") }
+    private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+        guard let sqliteName = config?.sqliteName else { assert(false, "sqliteName is empty") }
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-        if let url = applicationDocumentsDirectory?.appendingPathComponent(sqliteName) {
+        if let url = applicationDocumentsDirectory?.appendingPathComponent("\(sqliteName).sqlite") {
             do {
                 let options = [NSMigratePersistentStoresAutomaticallyOption: true,
                                      NSInferMappingModelAutomaticallyOption: true]
@@ -45,7 +50,7 @@ public final class CoreDataStack {
         return coordinator
     }()
     
-    lazy var context: NSManagedObjectContext = {
+   public lazy var context: NSManagedObjectContext = {
         let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         context.persistentStoreCoordinator = persistentStoreCoordinator
         return context
@@ -53,18 +58,14 @@ public final class CoreDataStack {
 }
 
 extension NSManagedObjectContext {
-    func saveContext () throws {
-        if self.persistentStoreCoordinator?.persistentStores == .none {
-            throw CoreDataError(message: "Error persistent Stores")
-        } else {
-            if self.hasChanges {
-                try self.save()
-            }
+    public func saveContext () throws {
+        if self.hasChanges {
+            try self.save()
         }
     }
 }
 
-struct CoreDataError: Error {
+public struct CoreDataError: Error {
     var message: String
     
     var localizedDescription: String {
