@@ -28,13 +28,25 @@ public final class CoreDataStack {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     }()
     
+    public func deleteDatabase(sqliteName : String) {
+        do {
+            var filemanager = FileManager.default
+            if let destinationPath = applicationDocumentsDirectory?.appendingPathComponent("\(sqliteName).sqlite") {
+                try filemanager.removeItem(at: destinationPath)
+            }
+            print("Database Deleted!")
+        } catch {
+            print("Error on Delete Database!!!")
+        }
+    }
+    
     private lazy var managedObjectModel: NSManagedObjectModel = {
         guard let entity = config?.entity else { assert(false, "Entity is empty") }
         let model = NSManagedObjectModel()
         model.entities = entity
         return model
     }()
-
+    
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         guard let sqliteName = config?.sqliteName else { assert(false, "sqliteName is empty") }
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
@@ -50,7 +62,7 @@ public final class CoreDataStack {
         return coordinator
     }()
     
-   public lazy var context: NSManagedObjectContext = {
+    public lazy var context: NSManagedObjectContext = {
         let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         context.persistentStoreCoordinator = persistentStoreCoordinator
         return context
