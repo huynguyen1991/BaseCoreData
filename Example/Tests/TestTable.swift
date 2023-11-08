@@ -42,7 +42,6 @@ class TestTable: XCTestCase {
         XCTAssertTrue(propertyNames.contains("int32")   , "int32 is missing")
         XCTAssertTrue(propertyNames.contains("int64")   , "int64 is missing")
         XCTAssertTrue(propertyNames.contains("int")     , "int is missing")
-        XCTAssertTrue(propertyNames.contains("decimal") , "decimal is missing")
         XCTAssertTrue(propertyNames.contains("double")  , "double is missing")
         XCTAssertTrue(propertyNames.contains("float")   , "float is missing")
         XCTAssertTrue(propertyNames.contains("bool")    , "bool is missing")

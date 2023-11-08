@@ -14,7 +14,7 @@ public enum SaveResult {
     case none
 }
 
-protocol AbstractRepository {
+public protocol AbstractRepository {
     associatedtype T
     func query(with predicate: NSPredicate?, limit: Int?) -> [T]
     func save(entity: T, with predicate: NSPredicate?) -> SaveResult
@@ -27,7 +27,7 @@ public final class Repository<T:CoreDataRepresentable>: AbstractRepository where
     
     let context: NSManagedObjectContext
     
-    init(context: NSManagedObjectContext) {
+    public init(context: NSManagedObjectContext) {
         self.context = context
     }
     

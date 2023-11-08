@@ -16,8 +16,6 @@ public struct CoreDataType {
             return NSAttributeType.integer32AttributeType
         } else if propertyType == Int.self {
             return NSAttributeType.integer64AttributeType
-        } else if propertyType == Decimal.self {
-            return NSAttributeType.decimalAttributeType
         } else if propertyType == Double.self {
             return NSAttributeType.doubleAttributeType
         } else if propertyType == Float.self {

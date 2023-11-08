@@ -52,6 +52,7 @@ public final class CoreDataStack {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
         if let url = applicationDocumentsDirectory?.appendingPathComponent("\(sqliteName).sqlite") {
             do {
+                print("applicationDocumentsDirectory \(applicationDocumentsDirectory!)")
                 let options = [NSMigratePersistentStoresAutomaticallyOption: true,
                                      NSInferMappingModelAutomaticallyOption: true]
                 try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: .none, at: url, options: options)

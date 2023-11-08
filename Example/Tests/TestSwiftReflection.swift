@@ -23,7 +23,7 @@ class SwiftReflection: XCTestCase {
             assert(false, "Should be able to get types")
         }
         
-        assert(types.count == 12, "Expected 12 properties, but got \(types.count)")
+        assert(types.count == 11, "Expected 12 properties, but got \(types.count)")
     }
     
     func testPropertyNames() {
@@ -37,7 +37,6 @@ class SwiftReflection: XCTestCase {
         XCTAssertTrue(propertyNames.contains("int32")   , "int32 is missing")
         XCTAssertTrue(propertyNames.contains("int64")   , "int64 is missing")
         XCTAssertTrue(propertyNames.contains("int")     , "int is missing")
-        XCTAssertTrue(propertyNames.contains("decimal") , "decimal is missing")
         XCTAssertTrue(propertyNames.contains("double")  , "double is missing")
         XCTAssertTrue(propertyNames.contains("float")   , "float is missing")
         XCTAssertTrue(propertyNames.contains("bool")    , "bool is missing")
@@ -56,7 +55,6 @@ class SwiftReflection: XCTestCase {
         XCTAssertTrue(types["int32"]! == Int32.self, "int32 is missing")
         XCTAssertTrue(types["int64"]! == Int.self, "int64 is missing")
         XCTAssertTrue(types["int"]! == Int.self, "int is missing")
-        XCTAssertTrue(types["decimal"]! == Decimal.self, "decimal is missing")
         XCTAssertTrue(types["double"]! == Double.self, "double is missing")
         XCTAssertTrue(types["float"]! == Float.self, "float is missing")
         XCTAssertTrue(types["bool"]! == Bool.self, "bool is missing")
