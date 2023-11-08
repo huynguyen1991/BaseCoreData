@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "11.0"
   },
-  "source_files": "BaseCoreData/Classes/**/*"
+  "source_files": "BaseCoreData/Classes/**/*",
+  "dependencies": {
+    "CwlCatchException": [
+
+    ]
+  }
 }

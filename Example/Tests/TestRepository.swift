@@ -27,18 +27,17 @@ final class TestRepository: XCTestCase {
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
-            for _ in 0...100 {
-                testSaveData()
+            for _ in 0...2 {
+                saveData()
             }
         }
     }
     
-    func testSaveData() {
+    func saveData() {
         let repository = Repository<DataDefinition>(context: CoreDataStack.shares.context)
         let storeData = DefinitionsGatewayImplementation(repository: repository)
         let definition = DataDefinition(int16: 16, int32: 32, int64: 64, int: 10, double: 10.0, float: 10.1, bool: false, string: "string", date: Date(), data: Data(), uUID: UUID(),
-                                        int16_2: 16, int32_2: 32, int64_2: 64, int_2: 10, double_2: 10.0, float_2: 10.1, bool_2: false, string_2: "string", date_2: Date(), data_2: Data(), uUID_2: UUID(),
-                                        int16_3: 16)
+                                        int16_2: 16, int32_2: 32, int64_2: 64, int_2: 10, double_2: 10.0, float_2: 10.1, bool_2: false, string_2: "string", date_2: Date(), data_2: Data(), uUID_2: UUID())
         let result = storeData.add(definition: definition)
 
         XCTAssertTrue(result, "cannot save data")

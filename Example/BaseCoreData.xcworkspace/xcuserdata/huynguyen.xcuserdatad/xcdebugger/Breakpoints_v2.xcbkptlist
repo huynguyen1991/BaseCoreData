@@ -20,5 +20,149 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5128AD81-B101-4980-9F79-8F8DCB0F3A2C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BaseCoreData/Classes/CoreDataStack.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "saveContext()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5128AD81-B101-4980-9F79-8F8DCB0F3A2C - 93f9c612768e0c3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () throws -&gt; () in __C.NSManagedObjectContext.saveContext() throws -&gt; ()"
+                  moduleName = "BaseCoreData"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huynguyen/BaseCoreData/BaseCoreData/Classes/CoreDataStack.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  uuid = "5128AD81-B101-4980-9F79-8F8DCB0F3A2C - aaeb5fa48635f63f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () throws -&gt; Swift.Optional&lt;()&gt; in __C.NSManagedObjectContext.saveContext() throws -&gt; ()"
+                  moduleName = "BaseCoreData"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huynguyen/BaseCoreData/BaseCoreData/Classes/CoreDataStack.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "57">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "294162EC-BF39-4E13-89EF-904D6E948AAC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BaseCoreData/Classes/CoreDataStack.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "saveContext()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "294162EC-BF39-4E13-89EF-904D6E948AAC - 208acb2bc94d02df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.NSManagedObjectContext.saveContext() throws -&gt; ()"
+                  moduleName = "BaseCoreData"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huynguyen/BaseCoreData/BaseCoreData/Classes/CoreDataStack.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "440">
+               </Location>
+               <Location
+                  uuid = "294162EC-BF39-4E13-89EF-904D6E948AAC - 208acb2bc94d02df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.NSManagedObjectContext.saveContext() throws -&gt; ()"
+                  moduleName = "BaseCoreData"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huynguyen/BaseCoreData/BaseCoreData/Classes/CoreDataStack.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "523">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "36A44E57-DBF9-41FA-83F4-23FAF0B45D77"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tests/TestRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "saveData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "36A44E57-DBF9-41FA-83F4-23FAF0B45D77 - f221cdbce1bb2c80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BaseCoreData_Tests.TestRepository.testSaveData() -&gt; ()"
+                  moduleName = "BaseCoreData_Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huynguyen/BaseCoreData/Example/Tests/TestRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "798">
+               </Location>
+               <Location
+                  uuid = "36A44E57-DBF9-41FA-83F4-23FAF0B45D77 - dbcc0b7a1187572c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BaseCoreData_Tests.TestRepository.saveData() -&gt; ()"
+                  moduleName = "BaseCoreData_Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huynguyen/BaseCoreData/Example/Tests/TestRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "798">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

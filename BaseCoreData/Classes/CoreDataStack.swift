@@ -8,6 +8,11 @@
 import Foundation
 import CoreData
 
+import CwlCatchException
+#if SWIFT_PACKAGE || COCOAPODS
+import CwlCatchExceptionSupport
+#endif
+
 public struct CoreDataStackConfig {
     public var sqliteName: String
     public var entity: [NSEntityDescription]
@@ -53,9 +58,9 @@ public final class CoreDataStack {
         if let url = applicationDocumentsDirectory?.appendingPathComponent("\(sqliteName).sqlite") {
             do {
                 print("applicationDocumentsDirectory \(applicationDocumentsDirectory!)")
-                let options = [NSMigratePersistentStoresAutomaticallyOption: true,
-                                     NSInferMappingModelAutomaticallyOption: true]
-                try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: .none, at: url, options: options)
+                //                let options = [NSMigratePersistentStoresAutomaticallyOption: true,
+                //                                     NSInferMappingModelAutomaticallyOption: true]
+                try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: .none, at: url, options: .none)
             } catch {
                 print("There was an error creating or loading the application's saved data.")
             }
@@ -73,7 +78,16 @@ public final class CoreDataStack {
 extension NSManagedObjectContext {
     public func saveContext () throws {
         if self.hasChanges {
-            try self.save()
+            do {
+                    try catchExceptionAsError { [weak self] in
+                        try self?.save()
+                    }
+                } catch let error as ExceptionError {
+                    print(error.exception)
+                    print(error.errorUserInfo)
+                    print(error.exception)
+                }
+           
         }
     }
 }

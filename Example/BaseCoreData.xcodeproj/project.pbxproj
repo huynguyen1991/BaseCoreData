@@ -335,10 +335,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BaseCoreData_Example/Pods-BaseCoreData_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BaseCoreData/BaseCoreData.framework",
+				"${BUILT_PRODUCTS_DIR}/CwlCatchException/CwlCatchException.framework",
+				"${BUILT_PRODUCTS_DIR}/CwlCatchExceptionSupport/CwlCatchExceptionSupport.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BaseCoreData.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CwlCatchException.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CwlCatchExceptionSupport.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

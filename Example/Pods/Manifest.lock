@@ -1,15 +1,26 @@
 PODS:
-  - BaseCoreData (0.1.0)
+  - BaseCoreData (0.1.0):
+    - CwlCatchException
+  - CwlCatchException (2.1.1):
+    - CwlCatchExceptionSupport (~> 2.1.1)
+  - CwlCatchExceptionSupport (2.1.1)
 
 DEPENDENCIES:
   - BaseCoreData (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - CwlCatchException
+    - CwlCatchExceptionSupport
 
 EXTERNAL SOURCES:
   BaseCoreData:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BaseCoreData: ea0abba16c1631add6f9a19d21a877c3c1a4b220
+  BaseCoreData: 3a235c69b16111992265c3083d09b9ec41171820
+  CwlCatchException: 86760545af2a490a23e964d76d7c77442dbce79b
+  CwlCatchExceptionSupport: a004322095d7101b945442c86adc7cec0650f676
 
 PODFILE CHECKSUM: 245c5f6621f1a046a29b342f5a71a04c33dd0131
 
