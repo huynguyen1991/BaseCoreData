@@ -35,7 +35,7 @@ public final class CoreDataStack {
     
     public func deleteDatabase(sqliteName : String) {
         do {
-            var filemanager = FileManager.default
+            let filemanager = FileManager.default
             if let destinationPath = applicationDocumentsDirectory?.appendingPathComponent("\(sqliteName).sqlite") {
                 try filemanager.removeItem(at: destinationPath)
             }
@@ -58,9 +58,9 @@ public final class CoreDataStack {
         if let url = applicationDocumentsDirectory?.appendingPathComponent("\(sqliteName).sqlite") {
             do {
                 print("applicationDocumentsDirectory \(applicationDocumentsDirectory!)")
-                //                let options = [NSMigratePersistentStoresAutomaticallyOption: true,
-                //                                     NSInferMappingModelAutomaticallyOption: true]
-                try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: .none, at: url, options: .none)
+                let options = [NSMigratePersistentStoresAutomaticallyOption: true,
+                                     NSInferMappingModelAutomaticallyOption: true]
+                try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: .none, at: url, options: options)
             } catch {
                 print("There was an error creating or loading the application's saved data.")
             }
@@ -79,23 +79,27 @@ extension NSManagedObjectContext {
     public func saveContext () throws {
         if self.hasChanges {
             do {
-                    try catchExceptionAsError { [weak self] in
-                        try self?.save()
-                    }
-                } catch let error as ExceptionError {
-                    print(error.exception)
-                    print(error.errorUserInfo)
-                    print(error.exception)
+                try catchExceptionAsError { [weak self] in
+                    try self?.save()
                 }
-           
+            } catch let error as ExceptionError {
+                print(error.exception)
+                print(error.errorUserInfo)
+            }
+          
+            
         }
     }
 }
 
 public struct CoreDataError: Error {
-    var message: String
+    public var message: String
     
-    var localizedDescription: String {
+    public var localizedDescription: String {
         return message
+    }
+    
+    public init(message: String) {
+        self.message = message
     }
 }

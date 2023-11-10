@@ -1,9 +1,9 @@
 PODS:
   - BaseCoreData (0.1.0):
     - CwlCatchException
-  - CwlCatchException (2.1.1):
-    - CwlCatchExceptionSupport (~> 2.1.1)
-  - CwlCatchExceptionSupport (2.1.1)
+  - CwlCatchException (2.1.2):
+    - CwlCatchExceptionSupport (~> 2.1.2)
+  - CwlCatchExceptionSupport (2.1.2)
 
 DEPENDENCIES:
   - BaseCoreData (from `../`)
@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BaseCoreData: 3a235c69b16111992265c3083d09b9ec41171820
-  CwlCatchException: 86760545af2a490a23e964d76d7c77442dbce79b
-  CwlCatchExceptionSupport: a004322095d7101b945442c86adc7cec0650f676
+  BaseCoreData: b479eca3fa6bcaae46fdc1acd1e75457d3d56c5e
+  CwlCatchException: 76542d5ea479c79ce16ddd6e7bc9d42c7ec63300
+  CwlCatchExceptionSupport: 42bf8c5e4e5e663f51100ddfa68caf7cfcf64ab6
 
-PODFILE CHECKSUM: 245c5f6621f1a046a29b342f5a71a04c33dd0131
+PODFILE CHECKSUM: b298a4584638fb3adcc0a05fb973a1c9e33275f8
 
 COCOAPODS: 1.13.0

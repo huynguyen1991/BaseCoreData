@@ -7,7 +7,17 @@
 		<key>BaseCoreData.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
+		</dict>
+		<key>CwlCatchException.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CwlCatchExceptionSupport.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-BaseCoreData_Example.xcscheme</key>
 		<dict>
@@ -17,7 +27,7 @@
 		<key>Pods-BaseCoreData_Tests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

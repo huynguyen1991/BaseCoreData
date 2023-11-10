@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "23ABD789607073A6B93EC3B2B96EA55C"
-               BuildableName = "Pods_BaseCoreData_Tests.framework"
-               BlueprintName = "Pods-BaseCoreData_Tests"
+               BlueprintIdentifier = "CA3D99499260B4C146BBB22670C1D8AD"
+               BuildableName = "CwlCatchExceptionSupport.framework"
+               BlueprintName = "CwlCatchExceptionSupport"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
