@@ -33,18 +33,6 @@ public final class CoreDataStack {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     }()
     
-    public func deleteDatabase(sqliteName : String) {
-        do {
-            let filemanager = FileManager.default
-            if let destinationPath = applicationDocumentsDirectory?.appendingPathComponent("\(sqliteName).sqlite") {
-                try filemanager.removeItem(at: destinationPath)
-            }
-            print("Database Deleted!")
-        } catch {
-            print("Error on Delete Database!!!")
-        }
-    }
-    
     private lazy var managedObjectModel: NSManagedObjectModel = {
         guard let entity = config?.entity else { assert(false, "Entity is empty") }
         let model = NSManagedObjectModel()
@@ -55,15 +43,8 @@ public final class CoreDataStack {
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         guard let sqliteName = config?.sqliteName else { assert(false, "sqliteName is empty") }
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-        if let url = applicationDocumentsDirectory?.appendingPathComponent("\(sqliteName).sqlite") {
-            do {
-                print("applicationDocumentsDirectory \(applicationDocumentsDirectory!)")
-                let options = [NSMigratePersistentStoresAutomaticallyOption: true,
-                                     NSInferMappingModelAutomaticallyOption: true]
-                try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: .none, at: url, options: options)
-            } catch {
-                print("There was an error creating or loading the application's saved data.")
-            }
+        if let store = applicationDocumentsDirectory?.appendingPathComponent("\(sqliteName).sqlite") {
+            try? addStore(store, coordinator: coordinator)
         }
         return coordinator
     }()
@@ -73,6 +54,40 @@ public final class CoreDataStack {
         context.persistentStoreCoordinator = persistentStoreCoordinator
         return context
     }()
+    
+    private func addStore(_ store: URL, coordinator: NSPersistentStoreCoordinator, retry: Bool = true) throws {
+        do {
+            let options = [NSMigratePersistentStoresAutomaticallyOption: true,
+                                 NSInferMappingModelAutomaticallyOption: true]
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: .none, at: store, options: options)
+        } catch let error as NSError {
+            let errorOnMigration = error.code == NSPersistentStoreIncompatibleVersionHashError
+            if errorOnMigration && retry {
+                cleanStoreOnFailedMigration()
+                return try addStore(store, coordinator: coordinator, retry: false)
+            }
+        }
+    }
+    
+    private func cleanStoreOnFailedMigration() {
+        do {
+            guard let sqliteName = config?.sqliteName else { assert(false, "sqliteName is empty") }
+            guard let url = applicationDocumentsDirectory else { assert(false, "folder is empty") }
+            
+            let destinationPath = url.appendingPathComponent("\(sqliteName).sqlite")
+            let shmSidecar = url.appendingPathComponent("\(sqliteName).sqlite-shm")
+            let walSidecar = url.appendingPathComponent("\(sqliteName).sqlite-wal")
+            
+            let filemanager = FileManager.default
+            
+            try filemanager.removeItem(at: destinationPath)
+            try filemanager.removeItem(at: shmSidecar)
+            try filemanager.removeItem(at: walSidecar)
+            print("Database Deleted!")
+        } catch {
+            print("Error on Delete Database!!!")
+        }
+    }
 }
 
 extension NSManagedObjectContext {
@@ -84,10 +99,8 @@ extension NSManagedObjectContext {
                 }
             } catch let error as ExceptionError {
                 print(error.exception)
-                print(error.errorUserInfo)
+                throw CoreDataError(message: "Can't save data")
             }
-          
-            
         }
     }
 }

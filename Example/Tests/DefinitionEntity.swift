@@ -36,7 +36,8 @@ public final class DefinitionEntity: NSManagedObject {
     @NSManaged var data_2: Data
     @NSManaged var uUID_2: UUID
     
-    @NSManaged var uUID_3: UUID
+    @NSManaged var uUID_4: UUID
+    @NSManaged var uUID_5: UUID
 }
 
 extension DefinitionEntity: DomainConvertibleType {
@@ -65,7 +66,8 @@ extension DefinitionEntity: DomainConvertibleType {
                               date_2: date_2,
                               data_2: data_2,
                               uUID_2: uUID_2,
-                              uUID_3: uUID_3)
+                              uUID_4: uUID_4,
+                              uUID_5: uUID_5)
     }
     
     public static func createEntityDescription() -> NSEntityDescription {
@@ -98,7 +100,8 @@ public struct DataDefinition {
     var data_2: Data
     var uUID_2: UUID
     
-    var uUID_3: UUID
+    var uUID_4: UUID
+    var uUID_5: UUID
 }
 
 extension DataDefinition: CoreDataRepresentable {
@@ -129,6 +132,7 @@ extension DataDefinition: CoreDataRepresentable {
         object.data_2 = data_2
         object.uUID_2 = uUID_2
         
-        object.uUID_3 = uUID_3
+        object.uUID_4 = uUID_4
+        object.uUID_5 = uUID_5
     }
 }

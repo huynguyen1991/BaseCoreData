@@ -20,7 +20,6 @@ class TestCoreDataStack: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
-        CoreDataStack.shares.deleteDatabase(sqliteName: "CoreDataStack")
     }
     
     func testPerformanceExample() {
