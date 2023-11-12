@@ -72,21 +72,31 @@ public final class CoreDataStack {
     private func cleanStoreOnFailedMigration() {
         do {
             guard let sqliteName = config?.sqliteName else { assert(false, "sqliteName is empty") }
-            guard let url = applicationDocumentsDirectory else { assert(false, "folder is empty") }
-            
-            let destinationPath = url.appendingPathComponent("\(sqliteName).sqlite")
-            let shmSidecar = url.appendingPathComponent("\(sqliteName).sqlite-shm")
-            let walSidecar = url.appendingPathComponent("\(sqliteName).sqlite-wal")
-            
+            guard let url = applicationDocumentsDirectory else { assert(false, "documents directory is empty") }
             let filemanager = FileManager.default
-            
-            try filemanager.removeItem(at: destinationPath)
-            try filemanager.removeItem(at: shmSidecar)
-            try filemanager.removeItem(at: walSidecar)
-            print("Database Deleted!")
+            for extentions in storeExtensions() {
+                let path = url.appendingPathComponent("\(sqliteName).\(extentions)")
+                try filemanager.removeItem(at: path)
+                print("Database Deleted!")
+            }
         } catch {
             print("Error on Delete Database!!!")
         }
+    }
+    
+    private func storeExtensions() -> [String] {
+        return ["sqlite", "sqlite-shm", "sqlite-wal"]
+    }
+}
+extension DispatchQueue {
+    /// - Parameter closure: Closure to execute.
+    func dispatchMainIfNeeded(_ closure: @escaping (()->())) {
+        guard self === DispatchQueue.main && Thread.isMainThread else {
+            DispatchQueue.main.async(execute: closure)
+            return
+        }
+
+        closure()
     }
 }
 
