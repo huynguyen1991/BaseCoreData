@@ -88,17 +88,6 @@ public final class CoreDataStack {
         return ["sqlite", "sqlite-shm", "sqlite-wal"]
     }
 }
-extension DispatchQueue {
-    /// - Parameter closure: Closure to execute.
-    func dispatchMainIfNeeded(_ closure: @escaping (()->())) {
-        guard self === DispatchQueue.main && Thread.isMainThread else {
-            DispatchQueue.main.async(execute: closure)
-            return
-        }
-
-        closure()
-    }
-}
 
 extension NSManagedObjectContext {
     public func saveContext () throws {
